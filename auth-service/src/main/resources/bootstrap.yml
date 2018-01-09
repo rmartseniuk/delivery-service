@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: auth
+  cloud:
+    kubernetes:
+      reload:
+        enabled: true
+        strategy: refresh
+        mode: event
+      discovery:
+        enabled: false
+      secrets:
+        paths: /etc/secrets/db

@@ -1,0 +1,29 @@
+server:
+  port: 8080
+
+zuul:
+  routes:
+    user-service: user/**
+    delivery-service: delivery/**
+
+ribbon:
+  eureka:
+    enabled: true
+    
+security:
+  ignored: /auth/**
+  oauth2:
+    resource:
+      jwt:
+        keyValue: |
+          -----BEGIN PUBLIC KEY-----
+          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoSET4NaQ5WYfEbgmCGrjT1wroZ8fMhEV5VbR5aSp+XQNW2D9HjfuJU02AULrA9IQg6/1lq40p3UA2ORFprc51NTvDuPWJzdrYOYb1q73h0BWO8SGtbAG1fZ2O3UKuJN6xzMmSz7P1MyxcNHqJvk0V4NLxmRyZg5ow5p4wVbECEMYQkj1ikgHLgqy+VNCxchBb+l7OVfn63FfK0lp51cRqfNGEgHDdebofK8TQsDcc6ckH6yuXDrsAOugQM/ek8nCpWKCFagPpLXYXPBn/ySOsVIpTD+N/+zjxJoD7qZbyjxQxavD/J6RdT2DDsh4c/zzjZTmM5f+cqke5rIfNOmF7wIDAQAB
+          -----END PUBLIC KEY-----
+
+
+eureka:
+  instance:
+      preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
