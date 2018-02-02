@@ -3,6 +3,7 @@ package com.epam.martseniuk.service.impl;
 import com.epam.martseniuk.dto.User;
 import com.epam.martseniuk.repository.UserRepository;
 import com.epam.martseniuk.service.UserService;
+import lombok.Setter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,9 +11,9 @@ import org.springframework.stereotype.Service;
  * @author Roman_Martseniuk
  */
 @Service
+@Setter
 public class UserServiceImpl implements UserService {
 
-    @Autowired
     private UserRepository userRepository;
 
     @Override
@@ -21,7 +22,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User getUserById(String id) {
-        return userRepository.findOne(id);
+    public User getUserById(String userId) {
+        return userRepository.findOne(userId);
     }
 }

@@ -2,9 +2,27 @@ server:
   port: 8080
 
 zuul:
+#  ignoredServices: '*'
+#  host:
+#    connect-timeout-millis: 20000
+#    socket-timeout-millis: 20000
+  sensitiveHeaders:
   routes:
-    user-service: user/**
-    delivery-service: delivery/**
+    auth-service:
+      path: /auth/**
+      serviceId: auth
+#      url: http://localhost:8081
+#      stripPrefix: false
+
+    user-service:
+      path: /account/**
+      serviceId: user-service
+      stripPrefix: false
+
+    task-service:
+      path: /task/**
+      serviceId: task-service
+      stripPrefix: false
 
 ribbon:
   eureka:

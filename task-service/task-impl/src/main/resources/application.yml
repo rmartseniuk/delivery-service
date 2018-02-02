@@ -1,0 +1,26 @@
+server:
+  port: 8083
+
+spring:
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: task-db
+
+eureka:
+  instance:
+      preferIpAddress: true
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8761/eureka/
+
+#security:
+#  ignored: /**
+#  oauth2:
+#    resource:
+#      jwt:
+#        keyValue: |
+#          -----BEGIN PUBLIC KEY-----
+#          MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAiAmLS+IU6FYyetYzhKfx2DVkdwuJAKBWuakkNKEcnoCyDHSHRGxsRu5UPD4F56k7fb+axrVxNCu3yQO81NXilADtN4BR5T9dW4WfmavZ7MFv1nXWp5PAnv2xLmg0OW3nDGIKIJFIhkXgq83pzSfkngE9w/2qbStev+r8nVq5L2KZerMuAKsnzzKeBp/xW4Mh+p683PrnyGdgmA79gvjugM6krjgn9mabJs4Kmi5LlTv8f/fceTHuT5yz24ItGHMumHcibSrhYJ9GrL7uJXTMFp3dscNjCkOIVtA/nXP4/01vkqk9y3JZgTkSlcOAFHJWOrKlw/fpVPWdXDce/ra+uwIDAQAB
+#          -----END PUBLIC KEY-----

@@ -5,15 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.epam.martseniuk</groupId>
-    <artifactId>delivery-project</artifactId>
+    <artifactId>track-time-system</artifactId>
+    <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <modules>
         <module>apigateway</module>
         <module>discovery</module>
         <module>auth-service</module>
-        <module>delivery-service</module>
+        <module>task-service</module>
         <module>user-service</module>
+        <module>config-service</module>
+        <module>notification-service</module>
     </modules>
 
 </project>

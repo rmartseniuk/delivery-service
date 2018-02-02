@@ -2,15 +2,12 @@ server:
   port: 8081
   contextPath: /uaa
 
-
 spring:
-  profiles:
-    active: default
   data:
-      mongodb:
-        host: localhost
-        database: user-db
-        port: 27017
+    mongodb:
+       host: localhost
+       port: 27017
+       database: user-db
 
 security:
   oauth:
@@ -20,12 +17,12 @@ security:
       secret: secret
       scope: server
     token:
-      accessTokenValiditySeconds: 60
-      refreshTokenValiditySeconds: 600
+      accessTokenValiditySeconds: 600
+      refreshTokenValiditySeconds: 6000
 
 eureka:
   instance:
       preferIpAddress: true
   client:
     serviceUrl:
-      defaultZone: http://discovery:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
